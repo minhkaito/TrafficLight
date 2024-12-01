@@ -1,0 +1,74 @@
+#ifndef __SEGMENT_H
+#define __SEGMENT_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
+#include "Header.h"
+
+
+#define	GPIO_SEGMENT_A1	GPIOA,GPIO_PIN_5
+#define	GPIO_SEGMENT_B1	GPIOA,GPIO_PIN_4
+#define	GPIO_SEGMENT_C1	GPIOB,GPIO_PIN_5
+#define	GPIO_SEGMENT_D1	GPIOB,GPIO_PIN_4
+#define	GPIO_SEGMENT_E1	GPIOB,GPIO_PIN_3
+#define	GPIO_SEGMENT_F1	GPIOA,GPIO_PIN_7
+#define	GPIO_SEGMENT_G1	GPIOA,GPIO_PIN_6
+		
+#define	GPIO_SEGMENT_A2	GPIOA,GPIO_PIN_2
+#define	GPIO_SEGMENT_B2	GPIOA,GPIO_PIN_1
+#define	GPIO_SEGMENT_C2	GPIOB,GPIO_PIN_9
+#define	GPIO_SEGMENT_D2	GPIOB,GPIO_PIN_7
+#define	GPIO_SEGMENT_E2	GPIOB,GPIO_PIN_6
+#define	GPIO_SEGMENT_F2	GPIOA,GPIO_PIN_3
+#define	GPIO_SEGMENT_G2	GPIOB,GPIO_PIN_8
+
+#define	GPIO_SEGMENT_PORT_A	GPIOA,GPIO_PIN_5|GPIO_PIN_4|GPIO_PIN_7|GPIO_PIN_6|GPIO_PIN_2|GPIO_PIN_1|GPIO_PIN_3
+#define	GPIO_SEGMENT_PORT_B	GPIOB,GPIO_PIN_5|GPIO_PIN_4|GPIO_PIN_3|GPIO_PIN_9|GPIO_PIN_7|GPIO_PIN_6|GPIO_PIN_8
+
+#define	GPIO_LED1_NUM_1	GPIOB,GPIO_PIN_5|GPIO_PIN_4|GPIO_PIN_3|GPIO_PIN_9|GPIO_PIN_7|GPIO_PIN_6|GPIO_PIN_8
+
+enum LED
+{
+  LED_1,
+  LED_2,
+  LED_MAX,
+};
+enum Segment
+{
+  SEGMENT_A1,
+  SEGMENT_B1,
+  SEGMENT_C1,
+  SEGMENT_D1,
+  SEGMENT_E1,
+  SEGMENT_F1,
+  SEGMENT_G1,
+  SEGMENT_A2,
+  SEGMENT_B2,
+  SEGMENT_C2,
+  SEGMENT_D2,
+  SEGMENT_E2,
+  SEGMENT_F2,
+  SEGMENT_G2,
+  SEGMENT_MAX,
+};
+enum SegmentState
+{
+  SEGMENT_NORMAL,
+  SEGMENT_ADJUSTMENT,
+};
+void SegmentInit(void);
+void SegmentTest(void);
+void SegmentSet(int segment);
+void SegmentClearAll(void);
+void SegmentSetAll(void);
+
+void DisplayNumber(int number);
+void SegmentManager(void);
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* __SEGMENT_H */

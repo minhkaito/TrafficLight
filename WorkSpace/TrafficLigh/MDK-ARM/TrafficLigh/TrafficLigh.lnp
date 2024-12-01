@@ -1,0 +1,26 @@
+--cpu Cortex-M3
+"trafficligh\startup_stm32f103xb.o"
+"trafficligh\segment.o"
+"trafficligh\trafficlight.o"
+"trafficligh\button.o"
+"trafficligh\main.o"
+"trafficligh\stm32f1xx_it.o"
+"trafficligh\stm32f1xx_hal_msp.o"
+"trafficligh\stm32f1xx_hal_gpio_ex.o"
+"trafficligh\stm32f1xx_hal_tim.o"
+"trafficligh\stm32f1xx_hal_tim_ex.o"
+"trafficligh\stm32f1xx_hal.o"
+"trafficligh\stm32f1xx_hal_rcc.o"
+"trafficligh\stm32f1xx_hal_rcc_ex.o"
+"trafficligh\stm32f1xx_hal_gpio.o"
+"trafficligh\stm32f1xx_hal_dma.o"
+"trafficligh\stm32f1xx_hal_cortex.o"
+"trafficligh\stm32f1xx_hal_pwr.o"
+"trafficligh\stm32f1xx_hal_flash.o"
+"trafficligh\stm32f1xx_hal_flash_ex.o"
+"trafficligh\stm32f1xx_hal_exti.o"
+"trafficligh\system_stm32f1xx_1.o"
+--strict --scatter "TrafficLigh\TrafficLigh.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "TrafficLigh.map" -o TrafficLigh\TrafficLigh.axf
